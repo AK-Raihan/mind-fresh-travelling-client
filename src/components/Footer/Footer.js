@@ -11,7 +11,7 @@ const Footer = () => {
                 <div className="col-lg-4 ">
                     <div>
                     <div>
-                    <a className="navbar-brand fs-2 fw-bold text-primary" href="/"> <span><i class="fas fa-trailer"></i></span> Mind Fress Traveling</a>
+                    <a className="navbar-brand fs-2 fw-bold text-primary" href="/"> <span><i class="fas fa-trailer"></i></span> Mind Fress Travelling</a>
                     </div>
                     <p className="text-white">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
                     <hr />
