@@ -1,9 +1,36 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import useAuth from './../../Hooks/useAuth';
+import React, { useState } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
+import { getAuth,
+    signInWithPopup,
+    GoogleAuthProvider,
+   } from "firebase/auth";
 
-const Login = () => {
-    const{user, signInUsingGoogle, logOut} = useAuth();
+const Login = (props) => {
+    // const{_id, name, img, description, price}=props.service;
+
+
+    const [user, setUser]= useState({});
+    const [error, setError]= useState('');
+    const[isloading, setIsLoading]= useState(true);
+
+    const history = useHistory();
+    const location = useLocation();
+
+    const url = location.state?.from || '/home'
+    const auth = getAuth();
+    const googleProvider = new GoogleAuthProvider();
+
+    const signInUsingGoogle= ()=>{
+        signInWithPopup(auth, googleProvider)
+        .then((result) => {
+          setUser(result.user);
+
+          history.push(url);
+          // console.log(result.user);
+          setError("");
+        })
+        .finally(() => setIsLoading(false));
+    }
     return (
 <div>
             <div className="row py-5">

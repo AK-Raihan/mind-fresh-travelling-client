@@ -10,9 +10,9 @@ const MyOrder = () => {
         fetch(`http://localhost:5000/services/${serviceId}`)
         .then(res=>res.json())
         .then(data=>setService(data))
-    } ,[])
+    } ,[]);
     return (
-        <div>
+        <div className="container">
             <table class="table">
             <thead>
                 <tr>
