@@ -1,0 +1,13 @@
+.img-card{
+    box-shadow: 3px 3px 10px 3px #b1afaf;
+    background: #fff;
+}
+
+
+.card-text h2{
+    color: rgb(17, 17, 112);
+}
+.card-text p{
+    color: rgb(136, 159, 187);
+    font-weight: bolder;
+}

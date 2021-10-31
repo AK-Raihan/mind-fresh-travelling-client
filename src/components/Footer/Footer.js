@@ -11,7 +11,7 @@ const Footer = () => {
                 <div className="col-lg-4 ">
                     <div>
                     <div>
-                    <a className="navbar-brand fs-2 fw-bold text-primary" href="/"> <span><i class="fas fa-trailer"></i></span> Mind Fress Travelling</a>
+                    <a className="navbar-brand fs-2 fw-bold text-primary" href="/"> <span><i className="fas fa-trailer"></i></span> Mind Fresh Travelling</a>
                     </div>
                     <p className="text-white">A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
                     <hr />
@@ -19,7 +19,7 @@ const Footer = () => {
                     <div>
                         <h5>Reach Out</h5>
                         <ul className=" list-unstyled">
-                        <li className="text-white"><i className="fas fa-map-marker-alt "></i> MMCH gate oposite position,22</li>
+                        <li className="text-white"><i className="fas fa-map-marker-alt "></i> BHA gate oposite position,22</li>
                         <li className="text-white"><i className="fas fa-phone-volume"></i> +24 123-456-7878</li>
                         <li className="text-white"><i className="far fa-envelope"></i> info@example.com</li>
                         </ul>
@@ -31,12 +31,12 @@ const Footer = () => {
                     <div>
                     <h5>Useful Link</h5>
                     <li> <Link> Book Appoitment</Link></li>
-                    <li> <Link>View Departments</Link></li>
+                    <li> <Link>View tour place</Link></li>
                     <li> <Link>Our Locations</Link></li>
-                    <li> <Link>Doctors On Panel</Link></li>
+                    <li> <Link>members On Panel</Link></li>
                     <li> <Link>Facilities Available</Link></li>
-                    <li> <Link>About Hospital</Link></li>
-                    <li> <Link>Hospital Rules</Link></li>
+                    <li> <Link>About tour</Link></li>
+                    <li> <Link>Tour Rules</Link></li>
                     </div>
 
                     <h5>Social contact</h5>
@@ -51,7 +51,7 @@ const Footer = () => {
                 <div className="col-lg-4">
                     <div>
                         <h5>Subscribe Newsletter</h5>
-                        <p>Subscribe to our newsletter for daily health tips</p>
+                        <p>Subscribe to our newsletter for new tourst place</p>
                         <div className="input-group mb-3">
                             <input type="text" className="form-control" placeholder="find a favourite place" aria-label="Recipient's username" aria-describedby="button-addon2"/>
                             <button className="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import initializeFirebase from "../Firebase/firebase.init";
+import { useHistory } from "react-router-dom";
 import { getAuth,
     signInWithPopup,
     GoogleAuthProvider,
@@ -20,10 +21,15 @@ const useFirebase= ()=>{
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
 
+    let history = useHistory();
+
     const signInUsingGoogle= ()=>{
+
         signInWithPopup(auth, googleProvider)
         .then((result) => {
           setUser(result.user);
+
+          history.push("/myOrder");
           // console.log(result.user);
           setError("");
         })
