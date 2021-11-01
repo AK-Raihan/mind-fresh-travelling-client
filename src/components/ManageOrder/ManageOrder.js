@@ -38,7 +38,7 @@ const ManageOrder = () => {
 
     }
     return (
-        <div className="container py-5 mb-0" >
+        <div className="container py-5 " style={{marginBottom:"200px"}} >
             <h2 className="my-5">Your All Orders Here.....</h2>
 
             <div className="row bg-primary p-1">
@@ -52,10 +52,11 @@ const ManageOrder = () => {
             {
                 tours.map((tour)=><div key={tour?._id}>
             <div className="row test-start bg-info ">
+            <h5 className="col">{tour?._id}</h5>
             <h5 className="col">{tour.example}</h5>
             <h5 className="col">{tour.email}</h5>
             <h5 className="col">$ {tour.price}</h5>
-            <button className="col-lg-1 mb-2" onClick={ ()=>handleDelete(tour._id)}> <i class="fas fa-trash-alt"></i> Cencle</button>
+            <button className="col-lg-1 mb-2" onClick={ ()=>handleDelete(tour._id)}> <i class="fas fa-trash-alt"></i> Cancle</button>
             
             </div>
                     

@@ -52,12 +52,13 @@ const MyOrder = () => {
                 </div>
 
             {
-                tours.map((tour, index)=><div key={tour._id}>
+                tours.map((tour, index)=><div key={tour?._id}>
             <div className="row test-start bg-info ">
+            <h5 className="col">{tour?._id}</h5>
             <h5 className="col">{tour.example}</h5>
             <h5 className="col">{tour.email}</h5>
             <h5 className="col">$ {tour.price}</h5>
-            <button className="col-lg-1" onClick={ ()=>handleDelete(tour._id)}> <i class="fas fa-trash-alt"></i> Cencle</button>
+            <button className="col-lg-1" onClick={ ()=>handleDelete(tour._id)}> <i class="fas fa-trash-alt"></i> Cancle</button>
             
             </div>
                     
