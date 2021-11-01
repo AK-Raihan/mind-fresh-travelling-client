@@ -11,7 +11,7 @@ const MyOrder = () => {
     const [isDeleted ,setIsDeleted] = useState(null)
 
     useEffect( ()=>{
-        fetch('http://localhost:5000/manageOrders')
+        fetch('https://fathomless-escarpment-93684.herokuapp.com/manageOrders')
         .then(res=>res.json())
         .then(data=>{
             const result = data.filter(pd=>pd.email==user.email)
@@ -23,7 +23,7 @@ const MyOrder = () => {
 
     const handleDelete= (id)=>{
         console.log(id);
-        fetch(`http://localhost:5000/deleteProduct/${id}`,{
+        fetch(`https://fathomless-escarpment-93684.herokuapp.com/deleteProduct/${id}`,{
             method: "DELETE",
             headers: {"content-type" : "application/json" },
         })
@@ -40,7 +40,7 @@ const MyOrder = () => {
 
     }
     return (
-        <div className="container mb-0" >
+        <div className="container mb-5" >
             <h2 className="my-5">Your All Orders Here.....</h2>
 
             <div className="row bg-primary p-1">

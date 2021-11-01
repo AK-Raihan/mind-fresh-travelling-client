@@ -19,7 +19,7 @@ const Booking = () => {
     const onSubmit = data =>{
         console.log(data);
 
-        fetch(`http://localhost:5000/services/${serviceId}`,{
+        fetch(`https://fathomless-escarpment-93684.herokuapp.com/services/${serviceId}`,{
             method: 'POST',
             headers: {'Content-Type' : 'application/json'},
             body: JSON.stringify(data)
@@ -37,7 +37,7 @@ const Booking = () => {
     } 
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/services/${serviceId}`)
+        fetch(`https://fathomless-escarpment-93684.herokuapp.com/services/${serviceId}`)
         .then(res=>res.json())
         .then(data=>setService(data))
     } ,[]);

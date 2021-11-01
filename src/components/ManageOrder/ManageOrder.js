@@ -8,7 +8,7 @@ const ManageOrder = () => {
     const [isDeleted ,setIsDeleted] = useState(null)
 
     useEffect( ()=>{
-        fetch('http://localhost:5000/manageOrders')
+        fetch('https://fathomless-escarpment-93684.herokuapp.com/manageOrders')
         .then(res=>res.json())
         .then(data=>setTours(data))
     } ,[])
@@ -17,7 +17,7 @@ const ManageOrder = () => {
         console.log(id)
         const proceed = window.confirm("Are you sure , you want to delete?");
         if(proceed){
-            fetch(`http://localhost:5000/deleteProduct/${id}`,{
+            fetch(`https://fathomless-escarpment-93684.herokuapp.com/deleteProduct/${id}`,{
                 method: "DELETE"
             })
             .then(res=>res.json())
