@@ -1,40 +1,67 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
+import './MyOrder.css'
+
+
 
 const MyOrder = () => {
-    const { serviceId } = useParams();
-    const[service, setService]= useState({})
+    const[tours, setTours]= useState([])
+    const [isDeleted ,setIsDeleted] = useState(null)
 
-    useEffect(()=>{
-        fetch(`http://localhost:5000/services/${serviceId}`)
+    useEffect( ()=>{
+        fetch('http://localhost:5000/manageOrders')
         .then(res=>res.json())
-        .then(data=>setService(data))
-    } ,[]);
+        .then(data=>setTours(data))
+    } ,[isDeleted])
+
+    const handleDelete= (id)=>{
+        console.log(id);
+        fetch(`http://localhost:5000/deleteProduct/${id}`,{
+            method: "DELETE",
+            headers: {"content-type" : "application/json" },
+        })
+        .then(res=>res.json())
+        .then(result=> {
+            if(result.deleteCount>0){
+                setIsDeleted(true);
+            }
+            else{
+                setIsDeleted(false);
+            }
+        })
+        console.log(id)
+
+    }
     return (
-        <div className="container">
-            <table class="table">
-            <thead>
-                <tr>
-                <th scope="col">SL</th>
-                <th scope="col">Location</th>
-                <th scope="col">Name</th>
-                <th scope="col">Price</th>
-                <th scope="col">Date</th>
-                <th scope="col">delete order</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                <th scope="row">1</th>
-                <td>nai</td>
-                <td>{service.name}</td>
-                <td>{service.price}</td>
-                <td>nai</td>
-                <td><Link>Cencle</Link> </td>
-                </tr>
-            </tbody>
-            </table>
+        <div >
+            <h2 className="my-5">Your All Orders Here.....</h2>
+            {
+                tours.map((tour, index)=><div key={tour._id}>
+            <div className="d-flex justify-content-around">
+                <div className="product-id">
+                    <h5 className="heading">Product id</h5>
+                    <p className="content">{tour._id}</p>
+                </div>
+                <div className="product-name">
+                    <h5 className="heading">Product name</h5>
+                    <p className="content">{tour.example}</p>
+                </div>
+                <div className="user-email">
+                    <h5 className="heading">User-email</h5>
+                    <p className="content">{tour.email}</p>
+                </div>
+                <div className="product-price">
+                    <h5 className="heading">Product price</h5>
+                    <p className="content">$ {tour.price}</p>
+                </div>
+                <div className="delete-button">
+                    <h5 className="heading">Action</h5>
+                    <button className="content" onClick={ ()=>handleDelete(tour._id)}> <i class="fas fa-trash-alt"></i> Cencle</button>
+                </div>
+            </div>
+                    
+            </div>)
+            }
+            
         </div>
     );
 };

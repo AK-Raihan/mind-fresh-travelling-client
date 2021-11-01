@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
-import { getAuth,
-    signInWithPopup,
-    GoogleAuthProvider,
-   } from "firebase/auth";
+import useAuth from './../../Hooks/useAuth';
+
 
 const Login = (props) => {
-    // const{_id, name, img, description, price}=props.service;
-
+    const { signInUsingGoogle} = useAuth();
 
     const [user, setUser]= useState({});
     const [error, setError]= useState('');
@@ -16,21 +13,22 @@ const Login = (props) => {
     const history = useHistory();
     const location = useLocation();
 
-    const url = location.state?.from || '/home'
-    const auth = getAuth();
-    const googleProvider = new GoogleAuthProvider();
+    const url = location.state?.from || '/home';
 
-    const signInUsingGoogle= ()=>{
-        signInWithPopup(auth, googleProvider)
+    const handleGooglelogin = ()=>{
+        signInUsingGoogle()
         .then((result) => {
-          setUser(result.user);
+            setUser(result.user);
+  
+            history.push(url);
+            // console.log(result.user);
+            setError("");
+          })
+          .finally(() => setIsLoading(false));
 
-          history.push(url);
-          // console.log(result.user);
-          setError("");
-        })
-        .finally(() => setIsLoading(false));
     }
+
+
     return (
 <div>
             <div className="row py-5">
@@ -41,7 +39,7 @@ const Login = (props) => {
             <hr />
             <p> click down</p>
             <hr />
-                <button onClick={signInUsingGoogle}  type="submit" className="btn btn-secondary"><span><i className="fab fa-google text-info fs-5"></i></span> Login with Google</button>
+                <button onClick={handleGooglelogin}  type="submit" className="btn btn-secondary"><span><i className="fab fa-google text-info fs-5"></i></span> Login with Google</button>
                 </div>
 
                 <div className="col-lg-4"></div>

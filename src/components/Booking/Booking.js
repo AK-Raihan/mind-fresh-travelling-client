@@ -53,6 +53,7 @@ const Booking = () => {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <input  defaultValue={user.displayName} {...register("name")} />
                     <input  defaultValue={user.email} {...register("email")} />
+                    <input  defaultValue={service.name} {...register("example")} />
                     <input  defaultValue={ serviceId} {...register("_id")} />
                     <input defaultValue={service.price}  {...register("price")} />
                     <input placeholder="phone number" type="text"  {...register("phone")} />

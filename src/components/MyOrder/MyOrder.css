@@ -1,0 +1,11 @@
+.heading{
+    background-color: rgb(168, 230, 230);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.content{
+    background-color: rgb(195, 195, 243);
+    padding: 5px;
+    border-radius: 5px;
+}
