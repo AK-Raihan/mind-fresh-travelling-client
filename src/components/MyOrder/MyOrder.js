@@ -40,7 +40,7 @@ const MyOrder = () => {
 
     }
     return (
-        <div className="container mb-5" >
+        <div className="container"  style={{marginBottom:"200px"}}>
             <h2 className="my-5">Your All Orders Here.....</h2>
 
             <div className="row bg-primary p-1">

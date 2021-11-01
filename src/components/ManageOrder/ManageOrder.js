@@ -5,7 +5,7 @@ import './ManageOrder.css';
 
 const ManageOrder = () => {
     const[tours, setTours]= useState([])
-    const [isDeleted ,setIsDeleted] = useState(null)
+    // const [isDeleted ,setIsDeleted] = useState(null)
 
     useEffect( ()=>{
         fetch('https://fathomless-escarpment-93684.herokuapp.com/manageOrders')
@@ -24,10 +24,14 @@ const ManageOrder = () => {
             .then(result=> {
                 if(result.deleteCount){
                     alert("Deleted Successfully");
-                    const remaining = tours.filter(tour=>tour?._id !==id);
+                    const remaining = tours.filter(tour=>tour._id !==id);
                     setTours(remaining);
                 }
             })
+
+        }
+        else{
+            console.log("hello")
         }
 
         console.log(id)
@@ -51,7 +55,7 @@ const ManageOrder = () => {
             <h5 className="col">{tour.example}</h5>
             <h5 className="col">{tour.email}</h5>
             <h5 className="col">$ {tour.price}</h5>
-            <button className="col-lg-1 mb-2" onClick={ ()=>handleDelete(tour?._id)}> <i class="fas fa-trash-alt"></i> Cencle</button>
+            <button className="col-lg-1 mb-2" onClick={ ()=>handleDelete(tour._id)}> <i class="fas fa-trash-alt"></i> Cencle</button>
             
             </div>
                     
