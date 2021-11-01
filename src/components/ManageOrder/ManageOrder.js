@@ -37,6 +37,7 @@ const ManageOrder = () => {
             {
                 tours.map((tour, index)=><div key={tour._id}>
             <div className="d-flex justify-content-around">
+                
                 <div className="product-id">
                     <h5 className="heading">Product id</h5>
                     <p className="content">{tour._id}</p>

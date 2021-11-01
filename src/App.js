@@ -13,6 +13,7 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import ManageOrder from './components/ManageOrder/ManageOrder';
 import AddTour from './components/AddTour/AddTour';
 import PlaceOrder from './components/PlaceOrder/PlaceOrder';
+import Services from './components/Services/Services';
 
 function App() {
   return (
@@ -26,6 +27,10 @@ function App() {
         </Route>
         <Route path="/home">
           <Home></Home>
+        </Route>
+
+        <Route path="/services">
+        <Services></Services>
         </Route>
         <Route path="/login">
           <Login></Login>

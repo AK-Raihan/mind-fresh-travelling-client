@@ -5,9 +5,17 @@
 
 
 .card-text h2{
-    color: rgb(17, 17, 112);
+    color: rgb(52, 52, 131);
 }
 .card-text p{
     color: rgb(136, 159, 187);
     font-weight: bolder;
+}
+
+.tour-card img{
+    transition: .9s;
+    cursor: pointer;
+}
+.tour-card img:hover{
+    transform: rotate(30deg);
 }

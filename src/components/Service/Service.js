@@ -6,7 +6,7 @@ const Service = (props) => {
     const{_id, name, img, description, price}=props.service;
     return (
         <div className="col ">
-        <div className="card p-3 img-card">
+        <div className="card p-3 img-card tour-card">
           <div className=" card-image"><img src={img} className="card-img-top figure-img img-fluid " alt="..."/></div>
           <div className="card-body card-text">
             <h2 className="card-title">{name} </h2>

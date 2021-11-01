@@ -17,7 +17,7 @@ const Banner = () => {
         <div className="carousel-inner">
           <div className="carousel-item active banner-carousel ">
             <img src={banner1} className="d-block w-100  " alt="..."/>
-            <div className="carousel-caption d-none d-md-block header-text">
+            <div className="carousel-caption d-none d-md-block banner-content">
               <button className="btn btn-outline-info">Book Your Trip</button>
               <h1>Where do you want to go?</h1>
               <h3>Trips, experiences, and places. All in one service.</h3>
@@ -25,7 +25,7 @@ const Banner = () => {
           </div>
           <div className="carousel-item banner-carousel">
             <img src={banner2} className="d-block w-100" alt="..."/>
-            <div className="carousel-caption d-none d-md-block header-text">
+            <div className="carousel-caption d-none d-md-block banner-content">
               <button className="btn btn-outline-info">Book Your Trip</button>
               <h1>Enjoy Vacation With Mind Fress Traveling</h1>
               <h3>Travel to the any corner of the world, without going around in circles.</h3>
@@ -33,7 +33,7 @@ const Banner = () => {
           </div>
           <div className="carousel-item banner-carousel">
             <img src={banner3} className="d-block w-100" alt="..."/>
-            <div className="carousel-caption d-none d-md-block header-text">
+            <div className="carousel-caption d-none d-md-block banner-content">
               <button className="btn btn-outline-info">Book Your Trip</button>
               <h1>Mind Fress Traveling is the best option for you!</h1>
               <h3>Find your special tour today</h3>

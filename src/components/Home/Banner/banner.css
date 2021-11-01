@@ -1,7 +1,21 @@
 .banner-carousel{
     height: 950px;
    }
+ .banner-content{
+    margin-bottom: 30vh;
+ }
 
- .header-text {
-     margin-bottom: 30vh;
+ .banner-content h1{
+     font-size: 50px;
+     color: rgb(11, 207, 207);
+ }
+ .banner-content h3{
+     font-size: 40px;
+     color: rgb(32, 51, 42);
+ }
+ .banner-content button {
+     font-size: 20px;
+     color: blueviolet;
+     font-weight: 7000;
+     padding: 15px 20px;
  }
